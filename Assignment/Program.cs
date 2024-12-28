@@ -62,24 +62,50 @@ namespace Assignment
 
             #region Q3 - Assign the following Permissions (Read, write, Delete, Execute) in a form of Enum .Create Variable from previous Enum to Add and RemovePermission from variable, check if specific Permission existedinside variable
 
+            Permissions per1 = (Permissions) 3;
+
+            Permissions per2 = (Permissions) 7;
+
+            Console.WriteLine(per1);
+
+            Console.WriteLine(per2);
+
+
+            // Adding read permission with check
+
+            if ((per1 & Permissions.Read) != Permissions.Read)
+                per1 ^= Permissions.Read;
+            else
+                Console.WriteLine("per1 has read permission");
+
+            Console.WriteLine(per1);
+
+            // removing read permission with check
+
+            if ((per2 & Permissions.Read) == Permissions.Read)
+                per2 ^= Permissions.Read;
+            else
+                Console.WriteLine("per2 hasn't read permission");
+
+            Console.WriteLine(per2);
 
 
             #endregion
 
             #region Q4 - Create an Enum called "Colors" with the basic colors (Red, Green, Blue) as its members.Write a C# program that takes a color name as input from the user and displays a message indicating whether theinput color is a primary color or not.
 
-            string input;
+            //string input;
 
-            do
-            {
-                Console.Write("Enter a color : ");
-                input = Console.ReadLine() ?? " ";
-            }while ( input == " ");
-            
-            if (Enum.TryParse(input, out Colors color))
-                Console.WriteLine($"{input} is a primary color");
-            else
-                Console.WriteLine($"{input} isn't a primary color");
+            //do
+            //{
+            //    Console.Write("Enter a color : ");
+            //    input = Console.ReadLine() ?? " ";
+            //}while ( input == " ");
+
+            //if (Enum.TryParse(input, out Colors color))
+            //    Console.WriteLine($"{input} is a primary color");
+            //else
+            //    Console.WriteLine($"{input} isn't a primary color");
 
             #endregion
 
