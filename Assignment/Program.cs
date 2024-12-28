@@ -26,37 +26,60 @@ namespace Assignment
 
             #region Q2 - Create an Enum called "Seas on" with the four seasons (Spring, Summer, Autumn, Winter) as its members.Write a C# program that takes a season name as input from the user and displays thecorresponding month range for that season. Note range for seasons(spring march to may, summer june to august, autumn Septemberto November, winter December to February)
 
-            Season season;
+            //Season season;
 
-            bool isParsed;
+            //bool isParsed;
+            //do
+            //{
+
+            //    Console.Write("Enter Season : ");
+
+            //    isParsed = Enum.TryParse(Console.ReadLine(), out season);
+
+
+            //} while (!isParsed);
+
+            //switch (season)
+            //{
+            //    case Season.Spring:
+            //        Console.WriteLine("Spring is from March to May");
+            //        break;
+            //    case Season.Summer:
+            //        Console.WriteLine("Summer is from June to August");
+            //        break;
+            //    case Season.Autumn:
+            //        Console.WriteLine("Autumn is from Septemper to November");
+            //        break;
+            //    case Season.Winter:
+            //        Console.WriteLine("Winter is from December to February");
+            //        break;
+            //    default:
+            //        Console.WriteLine("ERROR 404");
+            //        break;
+            //}
+
+            #endregion
+
+            #region Q3 - Assign the following Permissions (Read, write, Delete, Execute) in a form of Enum .Create Variable from previous Enum to Add and RemovePermission from variable, check if specific Permission existedinside variable
+
+
+
+            #endregion
+
+            #region Q4 - Create an Enum called "Colors" with the basic colors (Red, Green, Blue) as its members.Write a C# program that takes a color name as input from the user and displays a message indicating whether theinput color is a primary color or not.
+
+            string input;
+
             do
             {
-
-                Console.Write("Enter Season : ");
-
-                isParsed = Enum.TryParse(Console.ReadLine(), out season);
-
-
-            } while (!isParsed);
-
-            switch (season)
-            {
-                case Season.Spring:
-                    Console.WriteLine("Spring is from March to May");
-                    break;
-                case Season.Summer:
-                    Console.WriteLine("Summer is from June to August");
-                    break;
-                case Season.Autumn:
-                    Console.WriteLine("Autumn is from Septemper to November");
-                    break;
-                case Season.Winter:
-                    Console.WriteLine("Winter is from December to February");
-                    break;
-                default:
-                    Console.WriteLine("ERROR 404");
-                    break;
-            }
+                Console.Write("Enter a color : ");
+                input = Console.ReadLine() ?? " ";
+            }while ( input == " ");
+            
+            if (Enum.TryParse(input, out Colors color))
+                Console.WriteLine($"{input} is a primary color");
+            else
+                Console.WriteLine($"{input} isn't a primary color");
 
             #endregion
 
